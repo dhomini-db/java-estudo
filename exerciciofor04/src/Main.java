@@ -1,13 +1,32 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    IO.println(String.format("Hello and welcome!"));
+import java.util.Scanner;
+import java.util.Locale;
+public class Main{
+    public static void main(){
 
-    for (int i = 1; i <= 5; i++) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        IO.println("i = " + i);
+        Locale.setDefault(Locale.US);
+        Scanner sc = new Scanner (System.in);
+
+        int N;
+        double soma,n1,n2;
+
+        System.out.print("Digite um limite:");
+        N = sc.nextInt();
+
+        for(int i =0;i<N;i++){
+            System.out.print("digite um numero:");
+            n1 = sc.nextInt();
+
+            System.out.print("digite outro:");
+            n2 = sc.nextInt();
+
+            soma = n1 / n2;
+
+            if (n2 == 0){
+                System.out.println("divisao impossivel");
+            } else{
+                System.out.printf("%.1f / %.1f = %.1f%n",n1,n2,soma);
+            }
+        }
+        sc.close();
     }
 }
